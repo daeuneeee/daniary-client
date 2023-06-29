@@ -1,6 +1,7 @@
 'use client'
 
 import Header from '@components/header/Header'
+import Sidebar from '@components/sidebar/Sidebar'
 import styled from '@emotion/styled'
 
 interface IPostsLayoutProps {
@@ -12,7 +13,10 @@ const PostsLayout = ({ children }: IPostsLayoutProps) => {
     <html lang="ko">
       <Body>
         <Header />
-        {children}
+        <MainContainer>
+          <Sidebar />
+          {children}
+        </MainContainer>
       </Body>
     </html>
   )
@@ -22,4 +26,10 @@ export default PostsLayout
 
 const Body = styled.body`
   padding: 0 10rem;
+`
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 3rem;
 `

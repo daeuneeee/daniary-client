@@ -8,15 +8,25 @@ const Header = () => {
     <Container>
       <Logo>
         <Image
-          src="/daniary_logo.png"
+          src="/images/daniary_logo2.png"
           alt="blog logo"
           width={120}
           height={50}
         ></Image>
       </Logo>
       <IconBox>
-        <Image src="/write_icon.png" alt="write" width={25} height={25} />
-        <Image src="/search_icon.png" alt="search" width={25} height={25} />
+        <Image
+          src="/images/write_icon.png"
+          alt="write"
+          width={25}
+          height={25}
+        />
+        <Image
+          src="/images/search_icon.png"
+          alt="search"
+          width={25}
+          height={25}
+        />
       </IconBox>
     </Container>
   )
