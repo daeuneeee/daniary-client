@@ -11,6 +11,7 @@ const Sidebar = () => {
           width={180}
           height={180}
           style={{ borderRadius: '100%' }}
+          sizes="(max-width: 720px) 100vw, 720px"
         />
         <ProfileContentsBox>
           <IntroduceBox>
@@ -24,14 +25,14 @@ const Sidebar = () => {
                 alt="github icon"
                 width={21}
                 height={21}
+                style={{ marginTop: '3.5px' }}
               />
             </a>
             <Image
-              src="/images/mail_white.png"
+              src="/images/mail_white3.png"
               alt="mail icon"
               width={27.5}
               height={27.5}
-              style={{ marginTop: '1.5px' }}
             />
           </IconBox>
         </ProfileContentsBox>
@@ -75,10 +76,10 @@ const IntroduceBox = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   > strong {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
   > p {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 `
 
@@ -105,7 +106,7 @@ const TagListBox = styled.div`
   gap: 0.2rem;
   > p {
     font-family: 'suite300';
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 `
 

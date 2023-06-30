@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import { styleSet } from './styleSet'
 
 export const globalStyles = css`
   * {
@@ -10,6 +11,9 @@ export const globalStyles = css`
     font-family: suite400, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
       Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
       sans-serif;
+    @media ${styleSet.breakPoints.mobile} {
+      font-size: 0.5rem;
+    }
   }
 
   @font-face {
