@@ -67,6 +67,7 @@ const ProfileBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 12rem;
 `;
 
 const ProfileContentsBox = styled.div`

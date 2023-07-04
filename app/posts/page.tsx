@@ -21,8 +21,6 @@ const PostPage = () => {
     };
     void fetchData();
   }, []);
-  data;
-  console.log(data);
 
   return (
     <Container>
