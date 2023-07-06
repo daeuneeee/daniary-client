@@ -18,9 +18,7 @@ const PostsLayout = ({ children }: IPostsLayoutProps) => {
   return (
     <html lang="ko">
       {hiddenLayout ? (
-        <NewBody>
-          <MainContainer>{children}</MainContainer>
-        </NewBody>
+        <body>{children}</body>
       ) : (
         <Body>
           <Header />
@@ -44,8 +42,4 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 3rem;
-`;
-
-const NewBody = styled.body`
-  padding: 0 3rem;
 `;
