@@ -16,6 +16,7 @@ const Header = () => {
           width={120}
           height={50}
           onClick={onClickMoveToPage('/posts')}
+          priority
           style={{ cursor: 'pointer' }}
         ></Image>
       </Logo>

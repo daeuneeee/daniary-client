@@ -11,19 +11,25 @@ interface IPostsLayoutProps {
 
 const PostsLayout = ({ children }: IPostsLayoutProps) => {
   const pathName = usePathname();
-  const HIDDEN_SIDEBAR = ['/posts/new'];
+  const HIDDEN_LAYOUT = ['/posts/new'];
 
-  const hiddenSidebar = HIDDEN_SIDEBAR.includes(pathName);
+  const hiddenLayout = HIDDEN_LAYOUT.includes(pathName);
 
   return (
     <html lang="ko">
-      <Body>
-        <Header />
-        <MainContainer>
-          {!hiddenSidebar && <Sidebar />}
-          {children}
-        </MainContainer>
-      </Body>
+      {hiddenLayout ? (
+        <NewBody>
+          <MainContainer>{children}</MainContainer>
+        </NewBody>
+      ) : (
+        <Body>
+          <Header />
+          <MainContainer>
+            <Sidebar />
+            {children}
+          </MainContainer>
+        </Body>
+      )}
     </html>
   );
 };
@@ -38,4 +44,8 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 3rem;
+`;
+
+const NewBody = styled.body`
+  padding: 0 3rem;
 `;
