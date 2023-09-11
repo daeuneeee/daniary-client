@@ -3,6 +3,7 @@
 import styled from '@emotion/styled';
 import { styleSet } from 'app/styleSet';
 import axios from 'axios';
+import { useMoveToPage } from 'hooks/useMoveToPage';
 import { useEffect, useState } from 'react';
 
 interface IData {
@@ -13,6 +14,7 @@ interface IData {
 
 const PostPage = () => {
   const [data, setData] = useState<IData[]>([]);
+  const { onClickMoveToPage } = useMoveToPage();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +27,7 @@ const PostPage = () => {
   return (
     <Container>
       {data.map((el) => (
-        <ListBox key={el.id}>
+        <ListBox key={el.id} onClick={onClickMoveToPage(`posts/${el.id}`)}>
           <ImageBox></ImageBox>
           <ContentsBox>
             <Title>{el.title}</Title>
