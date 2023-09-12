@@ -1,23 +1,29 @@
 'use client';
 
 import axios from 'axios';
+import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { IData } from '../page';
 
 const Post = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState<IData>();
+  const param = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('http://localhost:6060/posts/:postId');
+      const result = await axios.get(
+        `http://localhost:6060/posts/${param.postId}`
+      );
       setData(result.data);
     };
-  });
+    void fetchData();
+  }, [param.postId]);
 
   console.log(data);
 
   return (
     <div>
-      <p>포스트내용이다아루알ㅇ</p>
+      <p>{data?.title}</p>
     </div>
   );
 };

@@ -6,10 +6,11 @@ import axios from 'axios';
 import { useMoveToPage } from 'hooks/useMoveToPage';
 import { useEffect, useState } from 'react';
 
-interface IData {
+export interface IData {
   id: string;
   title: string;
   contents: string;
+  preview: string;
 }
 
 const PostPage = () => {
@@ -31,7 +32,7 @@ const PostPage = () => {
           <ImageBox></ImageBox>
           <ContentsBox>
             <Title>{el.title}</Title>
-            <Contents>{el.contents}</Contents>
+            <Preview>{el.preview}</Preview>
             <Tags>#blog-daniary #project</Tags>
           </ContentsBox>
         </ListBox>
@@ -53,6 +54,7 @@ const Container = styled.section`
 `;
 const ListBox = styled.article`
   width: 30%;
+  cursor: pointer;
   @media ${styleSet.breakPoints.tablet} {
     width: 48%;
   }
@@ -79,6 +81,6 @@ const Title = styled.p`
   font-size: 1.5rem;
 `;
 
-const Contents = styled.p``;
+const Preview = styled.p``;
 
 const Tags = styled.p``;
