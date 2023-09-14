@@ -4,6 +4,7 @@ interface IButtonProps {
   text?: string;
   background?: string;
   hoverBackground?: string;
+  onClick?: () => void;
 }
 
 const Button = (props: IButtonProps) => {
@@ -11,6 +12,7 @@ const Button = (props: IButtonProps) => {
     <Container
       background={props.background}
       hoverBackground={props.hoverBackground}
+      onClick={props.onClick}
     >
       {props.text ? props.text : '이름입력'}
     </Container>
