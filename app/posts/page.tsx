@@ -11,6 +11,7 @@ export interface IData {
   title: string;
   contents: string;
   preview: string;
+  createdAt: string;
 }
 
 const PostPage = () => {
